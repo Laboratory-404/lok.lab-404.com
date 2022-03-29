@@ -15,7 +15,7 @@
 		"clean": "run-s clean:kit clean:app",
 		"clean:kit": "rimraf ./.svelte-kit",
 		"clean:app": "rimraf ./docs",
-		"build": "svelte-kit build && mklink docs\\404.html docs\\index.html",
+		"build": "svelte-kit build && copy /b NUL docs\\.nojekyll && echo lok.dekadence.ro > docs\\CNAME && cd docs && mklink 404.html index.html",
 		"dev": "svelte-kit dev --port 4000",
 		"preview": "svelte-kit preview",
 		"package": "svelte-kit package",
