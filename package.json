@@ -15,7 +15,7 @@
 		"clean": "run-s clean:kit clean:app",
 		"clean:kit": "rimraf ./.svelte-kit",
 		"clean:app": "rimraf ./docs",
-		"build": "svelte-kit build",
+		"build": "svelte-kit build && mklink docs\\404.html docs\\index.html",
 		"dev": "svelte-kit dev --port 4000",
 		"preview": "svelte-kit preview",
 		"package": "svelte-kit package",

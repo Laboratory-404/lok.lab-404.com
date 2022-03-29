@@ -9,27 +9,14 @@
 	import Footer from '$lib/components/Footer.svelte'
 	import Loading from '$lib/components/Loading.svelte'
 
-	let isHomepage
 	let loading = true
-
-	// noinspection JSCheckFunctionSignatures
-	const params = new Proxy($page.url.searchParams, {
-		get: (searchParams, prop) => searchParams.get(prop)
-	})
-
-	// noinspection JSUnresolvedVariable
-	let isDev = params.debug === 'true' || params.debug === '1' || params.dev === 'true' || params.dev === '1' || dev
-
-	// noinspection JSUnresolvedVariable
-	if (params.debug === 'false' || params.debug === '0' || params.dev === 'false' || params.dev === '0') {
-		isDev = false
-	}
-
-	$: isHomepage = $page.url.pathname === '/'
 
 	onMount(async () => {
 		setTimeout(() => {
 			loading = false
+
+			console.log(dev)
+			console.log(page)
 		}, 2000)
 	})
 </script>
@@ -38,12 +25,12 @@
 	<Loading />
 {:else}
 	<div class="app">
-		<Header {isDev} {isHomepage} />
+		<Header />
 
-		<main class:homepage={isHomepage}>
+		<main>
 			<slot />
 		</main>
 
-		<Footer {isDev} {isHomepage} />
+		<Footer />
 	</div>
 {/if}

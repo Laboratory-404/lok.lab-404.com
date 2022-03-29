@@ -15,6 +15,9 @@ const config = {
 		methodOverride: {
 			allowed: ['PUT', 'PATCH', 'DELETE', 'OPTIONS']
 		},
+		prerender: {
+			default: true
+		},
 		vite: {
 			build: {
 				chunkSizeWarningLimit: 2000,
