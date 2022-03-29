@@ -119,7 +119,7 @@
 		}
 	}
 
-	let data = $db.lands[0]['data'][land]['contribution']
+	let data = $db?.lands[0]['data'][land]['contribution']
 	let rows
 </script>
 
