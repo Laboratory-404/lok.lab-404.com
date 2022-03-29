@@ -1,0 +1,8 @@
+/.svelte-kit
+/package
+/docs
+.DS_Store
+node_modules
+!.env.*
+.vercel
+.output
