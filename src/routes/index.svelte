@@ -1,11 +1,12 @@
 <!--suppress JSUnresolvedVariable -->
+
 <script>
 	import { db } from '$lib/stores'
 	import { getContributions } from '$lib/api'
 	import Box from '$lib/components/Box.svelte'
 	import { Datatable, SearchInput, PaginationButtons, PaginationRowCount } from 'svelte-simple-datatables'
 
-	// noinspection JSUnusedLocalSymbols
+	// noinspection JSUnusedGlobalSymbols
 	let owner = '0xB00Fc62B8B22243779A35effb8B98f18193daa09'
 	// noinspection JSUnusedLocalSymbols
 	let lands = [134223, 134224, 134225, 133969, 133968, 133967, 133711, 133712, 133713, 133455, 133456, 133457, 150949]
@@ -132,10 +133,10 @@
 
 	<Datatable settings={settings} data={data} bind:dataRows={rows} id={'my-table'}>
 		<thead>
-			<th data-key="name" style="width: 25%;">Name</th>
-			<th data-key="continent" style="width: 25%;">Continent</th>
-			<th data-key="kingdomId" style="width: 25%;">Kingdom</th>
-			<th data-key="total" style="width: 25%;">Total</th>
+			<th data-key="name" style="width: 100px;">Name</th>
+			<th data-key="continent" style="width: 100px;">Continent</th>
+			<th data-key="kingdomId" style="width: 100px;">Kingdom</th>
+			<th data-key="total" style="width: 100px;">Total</th>
 		</thead>
 		<tbody>
 		{#if rows}

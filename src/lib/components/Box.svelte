@@ -1,5 +1,5 @@
 <script>
-	export let aside
+	export let aside = false
 </script>
 
 <div class="box {aside ? 'aside' : ''}" on:click {...$$props}>
