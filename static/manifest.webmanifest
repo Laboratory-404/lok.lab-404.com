@@ -1,0 +1,37 @@
+{
+	"name": "League of Kingdoms | MMO Strategy Game on Blockchain",
+	"short_name": "League of Kingdoms",
+	"dir": "auto",
+	"lang": "en-US",
+	"description": "'League of Kingdoms' is an MMO Strategy game where gamers fight for dominion. You can fully own and seamlessly trade digital assets through NFT technology. You will participate in game governance through transparent voting and congress system.",
+	"display": "standalone",
+	"orientation": "any",
+	"theme_color": "#A705C3",
+	"background_color": "#15001f",
+	"start_url": "/",
+	"serviceworker": {
+		"src": "/service-worker.js"
+	},
+	"icons": [{
+		"src": "/images/logos/logo-lok-192.png",
+		"sizes": "192x192",
+		"type": "image/png",
+		"purpose": "any"
+	} , {
+		"src": "/images/logos/logo-lok-256.png",
+		"sizes": "256x256",
+		"type": "image/png",
+		"purpose": "any"
+	}],
+	"shortcuts": [{
+		"name": "League of Kingdoms",
+		"description": "'League of Kingdoms' is an MMO Strategy game where gamers fight for dominion. You can fully own and seamlessly trade digital assets through NFT technology. You will participate in game governance through transparent voting and congress system.",
+		"url": "/",
+		"icons": [{
+			"src": "/images/logos/logo-lok-192.png",
+			"sizes": "192x192",
+			"type": "image/png",
+			"purpose": "any"
+		}]
+	}]
+}

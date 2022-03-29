@@ -1,0 +1,9 @@
+<script>
+	import NavigationBar from '$lib/components/NavigationBar.svelte'
+</script>
+
+<NavigationBar />
+
+<header>
+	HEADER
+</header>
