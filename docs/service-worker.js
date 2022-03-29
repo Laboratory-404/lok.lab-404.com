@@ -1,8 +1,8 @@
 const build = [
-  "/_app/start-4320f663.js",
+  "/_app/start-c5fef126.js",
   "/_app/pages/__layout.svelte-7ccd0d07.js",
   "/_app/pages/__error.svelte-f85186f4.js",
-  "/_app/pages/index.svelte-8fd32690.js",
+  "/_app/pages/index.svelte-38d73467.js",
   "/_app/assets/pages/index.svelte-4329fac1.css",
   "/_app/chunks/vendor-726a7d34.js",
   "/_app/assets/vendor-dc80082f.css"
@@ -15,7 +15,7 @@ const files = [
   "/manifest.webmanifest",
   "/robots.txt"
 ];
-const version = "1648569832251";
+const version = "1648570316696";
 const ASSETS = `cache${version}`;
 const to_cache = build.concat(files);
 const staticAssets = new Set(to_cache);
