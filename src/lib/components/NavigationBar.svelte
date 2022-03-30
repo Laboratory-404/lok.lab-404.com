@@ -9,7 +9,11 @@
 
 	const onChange = () => {
 		$db.selected = selected + ''
-		goto(`/land-${selected}`, { replaceState: true })
+
+		setTimeout(() => {
+			alert('change')
+			goto(`/land-${selected}`, { replaceState: true })
+		}, 100)
 	}
 
 	afterUpdate(() => {
