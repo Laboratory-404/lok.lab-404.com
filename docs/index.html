@@ -36,10 +36,10 @@
 		<meta property="og:image:type" content="image/png" />
 		<!-- endregion -->
 		<title>League of Kingdoms | MMO Strategy Game on Blockchain</title>
-		<link rel="shortcut icon" href="https://lok.dekadence.ro/images/favicon.png" />
-		<link rel="icon" type="image/x-icon" href="https://lok.dekadence.ro/images/favicon.png" />
-		<link rel="apple-touch-icon" href="https://lok.dekadence.ro/images/favicon.png" />
-		<link rel="apple-touch-startup-image" href="https://www.leagueofkingdoms.com/img/logo.png" />
+		<link rel="shortcut icon" href="/favicon.png" />
+		<link rel="icon" type="image/x-icon" href="/favicon.png" />
+		<link rel="apple-touch-icon" href="/favicon.png" />
+		<link rel="apple-touch-startup-image" href="/images/logos/logo.png" />
 		<link rel="manifest" href="/manifest.webmanifest" />
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,7 +48,7 @@
 		<noscript><link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600&subset=all&display=swap" rel="stylesheet" type="text/css" /></noscript>
 		<meta http-equiv="content-security-policy" content="">
 	<link rel="stylesheet" href="/_app/assets/vendor-dc80082f.css">
-	<link rel="modulepreload" href="/_app/start-b475427e.js">
+	<link rel="modulepreload" href="/_app/start-5a6b2915.js">
 	<link rel="modulepreload" href="/_app/chunks/vendor-145a5310.js">
 				<script>
 		if ('serviceWorker' in navigator) {
@@ -132,6 +132,23 @@
 				animation: ld-in 3s 0.6s ease infinite;
 			}
 
+			@-webkit-keyframes ld-in {
+				0% {
+					opacity: 0;
+					transform: scale(0);
+				}
+
+				30% {
+					opacity: 1;
+					transform: scale(1);
+				}
+
+				100% {
+					opacity: 1;
+					transform: scale(1);
+				}
+			}
+
 			@keyframes ld-in {
 				0% {
 					opacity: 0;
@@ -146,6 +163,12 @@
 				100% {
 					opacity: 1;
 					transform: scale(1);
+				}
+			}
+
+			@-webkit-keyframes animate-stripes {
+				100% {
+					background-position: -100px 0;
 				}
 			}
 
@@ -185,7 +208,7 @@
 		</svg>
 		
 		<script type="module" data-hydrate="45h">
-		import { start } from "/_app/start-b475427e.js";
+		import { start } from "/_app/start-5a6b2915.js";
 		start({
 			target: document.querySelector('[data-hydrate="45h"]').parentNode,
 			paths: {"base":"","assets":""},

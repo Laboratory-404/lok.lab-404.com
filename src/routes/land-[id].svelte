@@ -15,7 +15,7 @@
 
 	export let params
 
-	let id = params.id
+	$: id = params.id
 	let data
 
 	afterUpdate(() => {

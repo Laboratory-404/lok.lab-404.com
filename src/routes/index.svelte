@@ -12,7 +12,14 @@
 	let lands = [134223, 134224, 134225, 133969, 133968, 133967, 133711, 133712, 133713, 133455, 133456, 133457, 150949]
 	let start = '2022-03-22'
 	let end = '2022-03-28'
-	let land = 134223
+
+	$: land = 134223
+
+	let id = 0
+	let val = 0
+	let max = lands.length
+	let data
+	let rows
 
 	if (Array.isArray($db.lands))  {
 		if ($db.lands.length === 0) {
@@ -74,6 +81,8 @@
 						}
 					}
 				})
+
+				val = max
 			} else {
 				$db.lands.push({
 					start,
@@ -97,16 +106,12 @@
 					}
 				})
 
+				val = max
+
 				console.log('Loaded from server')
 			}
 		}
 	}
-
-	let id = 0
-	let val = 0
-	let max = lands.length
-	let data
-	let rows
 
 	afterUpdate(() => {
 		data = $db?.lands[0]?.data[land]?.contribution
