@@ -14,7 +14,7 @@ export default class Component {
 		new ResizeObserver(mutations => {
 			setTimeout(() => {
 				this.resize()
-			}, 200)
+			}, 300)
 		}).observe(document.querySelector(`#${this.id}`).parentElement)
 	}
 
