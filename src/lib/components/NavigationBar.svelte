@@ -14,7 +14,9 @@
 	}
 
 	afterUpdate(() => {
-		//selected = $db.selected + ''
+		setTimeout(() => {
+			selected = $db.selected + ''
+		})
 	})
 </script>
 
