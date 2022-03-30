@@ -158,7 +158,6 @@
 			<thead>
 			<th data-key="name" style="width: 100px;">Name</th>
 			<th data-key="continent" style="width: 100px;">Continent</th>
-			<th data-key="kingdomId" style="width: 100px;">Kingdom</th>
 			<th data-key="total" style="width: 100px;">Total</th>
 			</thead>
 			<tbody>
@@ -167,7 +166,6 @@
 					<tr>
 						<td>{row.name}</td>
 						<td>{row.continent}</td>
-						<td>{row.kingdomId}</td>
 						<td>{row.total}</td>
 					</tr>
 				{/each}
