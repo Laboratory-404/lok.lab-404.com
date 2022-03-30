@@ -11,8 +11,8 @@
 	let owner = '0xB00Fc62B8B22243779A35effb8B98f18193daa09'
 	// noinspection JSUnusedLocalSymbols
 	let lands = [134223, 134224, 134225, 133969, 133968, 133967, 133711, 133712, 133713, 133455, 133456, 133457, 150949]
-	let start = '2022-03-22'
-	let end = '2022-03-28'
+	let start = '2022-03-21'
+	let end = '2022-03-27'
 
 	let id = 0
 	let val = 0
