@@ -42,30 +42,6 @@
 
 		--text-color: #c6c6c6;
 		--accent-color: #cca300;
-
-		--primary-color: #A705C3;
-		--secondary-color: #AD2686;
-		--tertiary-color: #BC0274;
-		--quaternary-color: #5B4FFF;
-		--selected-color: #FF38F6;
-		--glow-color: #A705C3;
-		--header-color: #E122AA;
-		--burger-color: #A705C3;
-		--gradient-text-color: #A705C3 0%, #BC0274 100%;
-		--strong-color: #A705C3;
-		--border-color: #AD2686 0%, #A705C3 33.33%, #BC0274 66.66%, #A705C3 100%;
-		--avatar-border-color: #FF38BB 0%, #5B4FFF 33.33%, #FF38F6 66.66%, #5B4FFF 100%;
-		--scrollbar-vertical-color: #5B4FFF 0%, #FF38F6 50%, #5B4FFF 100%;
-		--scrollbar-horizontal-color: #FF38F6 0%, #5B4FFF 50%, #FF38F6 100%;
-		--radius-small: 15px;
-		--radius-normal: 20px;
-		--radius-big: 25px;
-		--border-radius-small: var(--radius-small) 0;
-		--border-radius-small-reverse: 0 var(--radius-small);
-		--border-radius: var(--radius-normal) 0;
-		--border-radius-reverse: 0 var(--radius-normal);
-		--border-radius-big: var(--radius-big) 0;
-		--border-radius-big-reverse: 0 var(--radius-big);
 	}
 
 	*::-webkit-scrollbar {
@@ -74,35 +50,33 @@
 	}
 
 	*::-webkit-scrollbar-corner {
-		background: var(--bg-color-primary) none;
+		background: var(--bg-color-secondary) none;
 	}
 
 	*::-webkit-scrollbar-track {
-		background: var(--bg-color-primary) none;
+		background: var(--bg-color-secondary) none;
 	}
 
 	//noinspection CssInvalidFunction
 	*::-webkit-scrollbar-thumb {
-		background: var(--primary-color);
-		background: transparent linear-gradient(0deg, var(--scrollbar-vertical-color));
+		background: var(--accent-color);
 		border-radius: 3px;
 	}
 
 	//noinspection CssInvalidFunction
 	*::-webkit-scrollbar-thumb:horizontal {
-		background: var(--primary-color);
-		background: transparent linear-gradient(90deg, var(--scrollbar-horizontal-color));
+		background: var(--accent-color);
 		border-radius: 3px;
 	}
 
 	*::selection {
-		color: var(--text-color);
-		background: var(--selected-color);
+		color: var(--bg-color-secondary);
+		background: var(--accent-color);
 	}
 
 	* {
 		scrollbar-width: thin;
-		scrollbar-color: var(--primary-color) var(--bg-color-primary);
+		scrollbar-color: var(--accent-color) var(--bg-color-secondary);
 	}
 
 	main {
@@ -127,7 +101,7 @@
 		z-index: 100;
 		width: 100%;
 		height: 50px;
-		background: #202020;
+		background:var(--bg-color-secondary);
 		border-bottom: 1px solid #000;
 	}
 
@@ -181,11 +155,6 @@
 
 	b, strong {
 		font-weight: 600;
-	}
-
-	/*noinspection CssUnusedSymbol*/
-	img.glow {
-		filter: drop-shadow(0 0 30px var(--glow-color));
 	}
 
 	/*noinspection CssUnusedSymbol*/

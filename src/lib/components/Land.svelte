@@ -1,6 +1,5 @@
 <!--suppress JSUnresolvedVariable, CssUnusedSymbol, ES6RedundantNestingInTemplateLiteral -->
 <script>
-	import { onMount } from 'svelte'
 	import Saos from 'saos'
 	import Box from '$lib/components/Box.svelte'
 	import { DataTable, SearchInput, PaginationButtons, PaginationRowCount } from '$lib/components/DataTable/index'
@@ -10,35 +9,20 @@
 	export let max = 0
 	export let data
 
+	let detached_search = false
+	let detached_pagination = false
+
 	const settings = {
-		detached_search: false,
-		detached_pagination: false,
-		sortable: true,
 		pagination: false,
-		scrollY: true,
-		// rowsPerPage: 50,
 		columnFilter: false,
-		css: true,
-		labels: {
-			search: 'Search...',
-			filter: 'Filter',
-			noRows: 'No entries to found',
-			info: 'Showing {start} to {end} of {rows} entries',
-			previous: 'Previous',
-			next: 'Next'
-		},
 		blocks: {
-			searchInput: true,
-			paginationButtons: false,
-			paginationRowCount: false
+			searchInput: !detached_search,
+			paginationButtons: !detached_pagination,
+			paginationRowCount: !detached_pagination
 		}
 	}
 
 	let rows
-
-	onMount(() => {
-		console.log('onMountLand')
-	})
 </script>
 
 <svelte:head>
@@ -59,18 +43,56 @@
 
 	#land-${id} section.dt-search input:focus {
 		border: 1px solid var(--accent-color);
+		box-shadow: rgb(255, 255, 255) 0 0 0 0, rgba(255, 204, 0, 0.65) 0 0 0 1px, rgba(0, 0, 0, 0) 0 0 0 0;
 	}
 
 	#land-${id} section.dt-header thead {
 		background-color: var(--bg-color-secondary);
+		box-shadow: 0 3px 3px -1px rgba(0, 0, 0, 0.4);
 	}
 
 	#land-${id} section.dt-header thead th {
 		background-color: transparent;
+		border-bottom: none;
 	}
 
-	#land-${id} section.dt-table {
+	#land-${id} article.dt-table {
 		overflow-x: auto;
+	}
+
+	#land-${id} article.dt-table table {
+		width: 100%;
+		border-collapse: collapse;
+		border-spacing: 0;
+		/*overflow: hidden;*/
+	}
+
+	#land-${id} article.dt-table table td, #land-${id} article.dt-table table th {
+		padding: 9px;
+		border-top: 1px solid #121212;
+		box-shadow: inset 0 1px #2e2e2e;
+		font-weight: normal;
+	}
+
+	#land-${id} article.dt-table table th {
+		text-align: left;
+		font-weight: bold;
+	}
+
+	#land-${id} article.dt-table table thead th {
+		position: sticky;
+		top: 0;
+		background: var(--bg-color-secondary);
+		box-shadow: 0 3px 3px -1px rgba(0, 0, 0, 0.4);
+	}
+
+	#land-${id} article.dt-table table tbody tr:nth-child(odd) th, #land-${id} article.dt-table table tbody tr:nth-child(odd) td {
+		background: #252525;
+	}
+
+	#land-${id} article.dt-table table tbody tr:hover th, #land-${id} article.dt-table table tbody tr:hover td {
+		background: var(--accent-color);
+		color: var(--bg-color-secondary);
 	}
 </${''}style>`}
 </svelte:head>
@@ -88,22 +110,22 @@
 		{#if data}
 			<DataTable id="land-{id}" settings={settings} data={data} bind:dataRows={rows}>
 				<thead>
-				<th data-key="name" style="width: 100px;">Name</th>
-				<th data-key="continent" style="width: 100px;">Continent</th>
-				<th data-key="kingdomId" style="width: 100px;">Kingdom</th>
-				<th data-key="total" style="width: 100px;">Total</th>
+					<th data-key="name" style="width: 100px;">Name</th>
+					<th data-key="continent" style="width: 100px;">Continent</th>
+					<th data-key="kingdomId" style="width: 100px;">Kingdom</th>
+					<th data-key="total" style="width: 100px;">Total</th>
 				</thead>
 				<tbody>
-				{#if rows}
-					{#each $rows as row}
-						<tr>
-							<td>{row.name}</td>
-							<td>{row.continent}</td>
-							<td>{row.kingdomId}</td>
-							<td>{row.total}</td>
-						</tr>
-					{/each}
-				{/if}
+					{#if rows}
+						{#each $rows as row}
+							<tr>
+								<td>{row.name}</td>
+								<td>{row.continent}</td>
+								<td>{row.kingdomId}</td>
+								<td>{row.total}</td>
+							</tr>
+						{/each}
+					{/if}
 				</tbody>
 			</DataTable>
 		{:else}

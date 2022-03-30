@@ -15,12 +15,12 @@ export default class options {
 				noRows: 'No entries to found',
 				info: 'Showing {start} to {end} of {rows} entries',
 				previous: 'Previous',
-				next: 'Next',
+				next: 'Next'
 			},
 			blocks: {
 				searchInput: true,
 				paginationButtons: true,
-				paginationRowCount: true,
+				paginationRowCount: true
 			}
 		})
 
@@ -42,7 +42,7 @@ export default class options {
 					noRows: typeof opt.labels.noRows === 'string' ? opt.labels.noRows : 'No entries to found',
 					info: typeof opt.labels.info === 'string' ? opt.labels.info : 'Showing {start} to {end} of {rows} entries',
 					previous: typeof opt.labels.previous === 'string' ? opt.labels.previous : 'Previous',
-					next: typeof opt.labels.next === 'string' ? opt.labels.next : 'Next',
+					next: typeof opt.labels.next === 'string' ? opt.labels.next : 'Next'
 				}
 
 				opt.blocks = opt.blocks ?? {}
@@ -50,7 +50,7 @@ export default class options {
 				const blocks = {
 					searchInput: typeof opt.blocks.searchInput === 'boolean' ? opt.blocks.searchInput : true,
 					paginationButtons: typeof opt.blocks.paginationButtons === 'boolean' ? opt.blocks.paginationButtons : true,
-					paginationRowCount: typeof opt.blocks.paginationRowCount === 'boolean' ? opt.blocks.paginationRowCount : true,
+					paginationRowCount: typeof opt.blocks.paginationRowCount === 'boolean' ? opt.blocks.paginationRowCount : true
 				}
 
 				return {
