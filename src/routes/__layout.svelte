@@ -177,7 +177,8 @@
 	}
 
 	input:focus {
-		border-color: var(--accent-color);
+		border: 1px solid var(--accent-color);
+		box-shadow: rgb(255, 255, 255) 0 0 0 0, rgba(255, 204, 0, 0.65) 0 0 0 1px, rgba(0, 0, 0, 0) 0 0 0 0;
 	}
 
 	input::placeholder {
@@ -201,6 +202,81 @@
 	input:-webkit-autofill:active {
 		transition: all 5000s ease-in-out 0s;
 		transition-property: background-color, color;
+	}
+
+	select {
+		width: 170px;
+		border: 2px solid var(--accent-color);
+		border-radius: 20px;
+		padding: 10px;
+		background-color: transparent;
+		appearance: none;
+		outline: none;
+		color: var(--text-color);
+
+		&:focus, &:focus-within, &:focus-visible {
+			outline: none;
+			border-color: var(--accent-color);
+			box-shadow: rgb(255, 255, 255) 0 0 0 0, rgba(255, 204, 0, 0.65) 0 0 0 1px, rgba(0, 0, 0, 0) 0 0 0 0;
+		}
+
+		option {
+			outline: none !important;
+			border: 2px solid var(--accent-color) !important;
+			background-color: var(--bg-color-secondary);
+			color: var(--text-color);
+			text-align: center;
+		}
+	}
+
+	progress[value] {
+		appearance: none;
+		border: none;
+		width: 100%;
+		height: 20px;
+		background-color: whiteSmoke;
+		border-radius: 3px;
+		box-shadow: 0 2px 3px rgba(0, 0, 0, .5) inset;
+		color: var(--accent-color);
+		position: relative;
+		margin: 0 0 1.5em;
+	}
+
+	progress[value]::-webkit-progress-bar {
+		background-color: whiteSmoke;
+		border-radius: 3px;
+		box-shadow: 0 2px 3px rgba(0, 0, 0, .5) inset;
+	}
+
+	progress[value]::-webkit-progress-value {
+		position: relative;
+		background-size: 35px 20px, 100% 100%, 100% 100%;
+		border-radius: 3px;
+		transition: width 0.3s ease-in-out;
+		-webkit-animation: animate-stripes 5s linear infinite;
+		animation: animate-stripes 5s linear infinite;
+	}
+
+	progress[value]::-webkit-progress-value:after {
+		content: '';
+		position: absolute;
+		width: 5px;
+		height: 5px;
+		top: 7px;
+		right: 7px;
+		background-color: white;
+		border-radius: 100%;
+	}
+
+	progress[value]::-moz-progress-bar {
+		background-image: -moz-linear-gradient(135deg, transparent, transparent 33%, rgba(0, 0, 0, .1) 33%, rgba(0, 0, 0, .1) 66%, transparent 66%), -moz-linear-gradient(top, rgba(255, 255, 255, .25), rgba(0, 0, 0, .2)), -moz-linear-gradient(left, #f44, #09c);
+		background-size: 35px 20px, 100% 100%, 100% 100%;
+		border-radius: 3px;
+
+	}
+
+	progress[value]::-webkit-progress-value {
+		background-image: -webkit-linear-gradient(135deg, transparent, transparent 33%, rgba(0,0,0,.1) 33%, rgba(0,0,0,.1) 66%, transparent 66%), -webkit-linear-gradient(top, rgba(255, 255, 255, .25), rgba(0,0,0,.2)), -webkit-linear-gradient( left, #f44, #09c);
 	}
 
 	.fade-in {
