@@ -58,13 +58,47 @@
 
 	#land-${id} article.dt-table {
 		overflow-x: auto;
+		border-bottom: none;
+		scrollbar-width: thin;
+		scrollbar-color: var(--accent-color) var(--bg-color-primary);
+	}
+
+	#land-${id} article.dt-table::-webkit-scrollbar {
+		width: 4px;
+		height: 4px;
+	}
+
+	#land-${id} article.dt-table::-webkit-scrollbar-track {
+		background: var(--bg-color-primary) none;
+		border-radius: 3px;
+	}
+
+	#land-${id} article.dt-table::-webkit-scrollbar-thumb {
+		background: var(--accent-color);
+		border-radius: 3px;
+	}
+
+	#land-${id} article.dt-table::-webkit-scrollbar-thumb:horizontal {
+		background: var(--accent-color);
+		border-radius: 3px;
+	}
+
+	#land-${id} article.dt-table::-webkit-scrollbar-thumb:hover {
+		background: var(--accent-color);
+	}
+
+	#land-${id} article.dt-table::-webkit-scrollbar-track-piece:start {
+		top: 40px;
+	}
+
+	#land-${id} article.dt-table::-webkit-scrollbar-corner {
+		background: var(--bg-color-secondary) none;
 	}
 
 	#land-${id} article.dt-table table {
 		width: 100%;
 		border-collapse: collapse;
 		border-spacing: 0;
-		/*overflow: hidden;*/
 	}
 
 	#land-${id} article.dt-table table td, #land-${id} article.dt-table table th {
