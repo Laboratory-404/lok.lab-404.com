@@ -5,8 +5,8 @@
 	import { Datatable, SearchInput, PaginationButtons, PaginationRowCount } from 'svelte-simple-datatables'
 
 	export let id = 0
-	export let val = 0
-	export let max = 0
+	export let val = 5
+	export let max = 10
 	export let data
 
 	const settings = {
@@ -161,6 +161,8 @@
 		position: relative;
 		background-size: 35px 20px, 100% 100%, 100% 100%;
 		border-radius: 3px;
+		transition: width 0.3s ease-in-out;
+		-webkit-animation: animate-stripes 5s linear infinite;
 		animation: animate-stripes 5s linear infinite;
 	}
 
@@ -179,10 +181,10 @@
 		background-image: -moz-linear-gradient(135deg, transparent, transparent 33%, rgba(0, 0, 0, .1) 33%, rgba(0, 0, 0, .1) 66%, transparent 66%), -moz-linear-gradient(top, rgba(255, 255, 255, .25), rgba(0, 0, 0, .2)), -moz-linear-gradient(left, #09c, #f44);
 		background-size: 35px 20px, 100% 100%, 100% 100%;
 		border-radius: 3px;
+
 	}
 
-	progress[value]::-webkit-progress-value,
-	progress[value]::-webkit-progress-value  {
+	progress[value]::-webkit-progress-value {
 		background-image: -webkit-linear-gradient(135deg, transparent, transparent 33%, rgba(0,0,0,.1) 33%, rgba(0,0,0,.1) 66%, transparent 66%), -webkit-linear-gradient(top, rgba(255, 255, 255, .25), rgba(0,0,0,.2)), -webkit-linear-gradient( left, #09c, #f44);
 	}
 

@@ -36,10 +36,10 @@
 		<meta property="og:image:type" content="image/png" />
 		<!-- endregion -->
 		<title>League of Kingdoms | MMO Strategy Game on Blockchain</title>
-		<link rel="shortcut icon" href="https://lok.dekadence.ro/images/favicon.png" />
-		<link rel="icon" type="image/x-icon" href="https://lok.dekadence.ro/images/favicon.png" />
-		<link rel="apple-touch-icon" href="https://lok.dekadence.ro/images/favicon.png" />
-		<link rel="apple-touch-startup-image" href="https://www.leagueofkingdoms.com/img/logo.png" />
+		<link rel="shortcut icon" href="/favicon.png" />
+		<link rel="icon" type="image/x-icon" href="/favicon.png" />
+		<link rel="apple-touch-icon" href="/favicon.png" />
+		<link rel="apple-touch-startup-image" href="/images/logos/logo.png" />
 		<link rel="manifest" href="/manifest.webmanifest" />
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -124,6 +124,23 @@
 				animation: ld-in 3s 0.6s ease infinite;
 			}
 
+			@-webkit-keyframes ld-in {
+				0% {
+					opacity: 0;
+					transform: scale(0);
+				}
+
+				30% {
+					opacity: 1;
+					transform: scale(1);
+				}
+
+				100% {
+					opacity: 1;
+					transform: scale(1);
+				}
+			}
+
 			@keyframes ld-in {
 				0% {
 					opacity: 0;
@@ -138,6 +155,12 @@
 				100% {
 					opacity: 1;
 					transform: scale(1);
+				}
+			}
+
+			@-webkit-keyframes animate-stripes {
+				100% {
+					background-position: -100px 0;
 				}
 			}
 
