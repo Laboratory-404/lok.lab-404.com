@@ -1,3 +1,4 @@
 <footer>
-	<a href="https://github.com/DeKaDeNcE/LOK" target="_blank">League of Kingdoms</a> · Copyright © 2022 ÐeKaÐeNcE
+	<div>League of Kingdoms</div>
+	<div>Copyright © 2022 ÐeKaÐeNcE</div>
 </footer>

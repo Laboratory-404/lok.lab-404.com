@@ -1,20 +1,19 @@
 <!--suppress JSUnresolvedVariable, CssUnusedSymbol, ES6RedundantNestingInTemplateLiteral -->
 <script>
-	import { db } from '$lib/stores'
-	import { getContributions } from '$lib/api'
 	import Box from '$lib/components/Box.svelte'
 	import { Datatable, SearchInput, PaginationButtons, PaginationRowCount } from 'svelte-simple-datatables'
 
-	export let id = 0
+	export let id
+	export let data
 
 	const settings = {
 		detached_search: false,
-		detached_pagination: true,
+		detached_pagination: false,
 		sortable: true,
 		pagination: true,
 		scrollY: true,
 		rowsPerPage: 50,
-		columnFilter: true,
+		columnFilter: false,
 		css: true,
 		labels: {
 			search: 'Search...',
@@ -30,8 +29,6 @@
 			paginationRowCount: false
 		}
 	}
-
-	let data = $db?.lands[0]['data'][id]['contribution']
 
 	let rows
 </script>
@@ -70,13 +67,13 @@
 	{#if settings.detached_search}
 		<aside class="search">
 			{#if $rows}
-				<SearchInput id={'my-table'}/>
+				<SearchInput id="land-{id}" />
 			{/if}
 		</aside>
 	{/if}
 
 	{#if data}
-		<Datatable settings={settings} data={data} bind:dataRows={rows} id="land-{id}" style="--id: {id};">
+		<Datatable id="land-{id}" settings={settings} data={data} bind:dataRows={rows}>
 			<thead>
 				<th data-key="name" style="width: 100px;">Name</th>
 				<th data-key="continent" style="width: 100px;">Continent</th>
@@ -103,8 +100,8 @@
 	{#if settings.detached_pagination}
 		<aside>
 			{#if $rows}
-				<PaginationButtons id={'my-table'}/>
-				<PaginationRowCount id={'my-table'}/>
+				<PaginationButtons id="land-{id}" />
+				<PaginationRowCount id="land-{id}" />
 			{/if}
 		</aside>
 	{/if}
@@ -112,6 +109,10 @@
 
 
 <style global lang="scss">
+	.box {
+		margin-top: 70px;
+	}
+
 	aside {
 		display: flex;
 		justify-content: space-between;

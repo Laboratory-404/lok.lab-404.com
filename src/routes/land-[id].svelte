@@ -1,26 +1,27 @@
 <!--suppress JSUnusedAssignment -->
 
 <script context="module">
-	export const load = async ({ routeId, url, params }) => {
+	export const load = async ({ params }) => {
 		return {
-			props: { routeId, url, params }
+			props: { params }
 		}
 	}
 </script>
 
 <script>
+	import { afterUpdate } from 'svelte'
+	import { db } from '$lib/stores'
 	import Land from '$lib/components/Land.svelte'
 
-	export let routeId
 	export let params
-	export let url
 
-	console.log(routeId)
-	console.log(url)
-	console.log(params)
+	$: id = params.id
 
-	let id =  params.id
+	let data
+
+	afterUpdate(() => {
+		data = $db?.lands[0]['data'][id]['contribution']
+	})
 </script>
 
-
-<Land {id} />
+<Land {id} {data} />
