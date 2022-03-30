@@ -19,7 +19,8 @@
 	let data
 
 	afterUpdate(() => {
-		data = $db?.lands[0]['data'][id]['contribution']
+		// noinspection JSUnresolvedVariable
+		data = $db?.lands[0]?.data[id]?.contribution
 	})
 </script>
 
