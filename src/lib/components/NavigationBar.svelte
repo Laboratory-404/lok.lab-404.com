@@ -1,7 +1,7 @@
 <script>
 	import { db } from '$lib/stores'
 
-	let lands = Object.keys($db?.lands[0]['data']) || []
+	let lands = Object.keys($db?.lands[0]?.data || {})
 </script>
 
 <nav>

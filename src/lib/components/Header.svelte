@@ -3,7 +3,3 @@
 </script>
 
 <NavigationBar />
-
-<header>
-	HEADER
-</header>
