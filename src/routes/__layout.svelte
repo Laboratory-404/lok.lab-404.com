@@ -233,4 +233,19 @@
 		transition: all 5000s ease-in-out 0s;
 		transition-property: background-color, color;
 	}
+
+	.fade-in {
+		animation: fade-in 0.8s;
+	}
+
+	@keyframes -global-fade-in {
+		from {
+			opacity: 0;
+			transform: scale(.8, .8)
+		}
+
+		to {
+			opacity: 1;
+		}
+	}
 </style>

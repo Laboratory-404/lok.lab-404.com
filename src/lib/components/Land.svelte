@@ -1,5 +1,6 @@
 <!--suppress JSUnresolvedVariable, CssUnusedSymbol, ES6RedundantNestingInTemplateLiteral -->
 <script>
+	import Saos from 'saos'
 	import Box from '$lib/components/Box.svelte'
 	import { Datatable, SearchInput, PaginationButtons, PaginationRowCount } from 'svelte-simple-datatables'
 
@@ -67,49 +68,51 @@
 </${''}style>`}
 </svelte:head>
 
-<Box style="height: 80vh;">
-	{#if settings.detached_search}
-		<aside class="search">
-			{#if $rows}
-				<SearchInput id="land-{id}" />
-			{/if}
-		</aside>
-	{/if}
+<Saos animation={"fade-in 0.3s"} once>
+	<Box style="height: 80vh;">
+		{#if settings.detached_search}
+			<aside class="search">
+				{#if $rows}
+					<SearchInput id="land-{id}" />
+				{/if}
+			</aside>
+		{/if}
 
-	{#if data}
-		<Datatable id="land-{id}" settings={settings} data={data} bind:dataRows={rows}>
-			<thead>
+		{#if data}
+			<Datatable id="land-{id}" settings={settings} data={data} bind:dataRows={rows}>
+				<thead>
 				<th data-key="name" style="width: 100px;">Name</th>
 				<th data-key="continent" style="width: 100px;">Continent</th>
 				<th data-key="kingdomId" style="width: 100px;">Kingdom</th>
 				<th data-key="total" style="width: 100px;">Total</th>
-			</thead>
-			<tbody>
-			{#if rows}
-				{#each $rows as row}
-					<tr>
-						<td>{row.name}</td>
-						<td>{row.continent}</td>
-						<td>{row.kingdomId}</td>
-						<td>{row.total}</td>
-					</tr>
-				{/each}
-			{/if}
-			</tbody>
-		</Datatable>
-	{:else}
-		No data
-	{/if}
+				</thead>
+				<tbody>
+				{#if rows}
+					{#each $rows as row}
+						<tr>
+							<td>{row.name}</td>
+							<td>{row.continent}</td>
+							<td>{row.kingdomId}</td>
+							<td>{row.total}</td>
+						</tr>
+					{/each}
+				{/if}
+				</tbody>
+			</Datatable>
+		{:else}
+			No data
+		{/if}
 
-	{#if settings.detached_pagination}
-		<aside>
-			{#if $rows}
-				<PaginationButtons id="land-{id}" />
-				<PaginationRowCount id="land-{id}" />
-			{/if}
-		</aside>
-	{/if}
-</Box>
+		{#if settings.detached_pagination}
+			<aside>
+				{#if $rows}
+					<PaginationButtons id="land-{id}" />
+					<PaginationRowCount id="land-{id}" />
+				{/if}
+			</aside>
+		{/if}
+	</Box>
+</Saos>
 
 <style global lang="scss">
 	.box {
