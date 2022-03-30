@@ -1,6 +1,7 @@
 <!--suppress JSUnresolvedVariable -->
 
 <script>
+	import { afterUpdate } from 'svelte'
 	import { db } from '$lib/stores'
 	import { getContributions } from '$lib/api'
 	import Land from '$lib/components/Land.svelte'
@@ -27,6 +28,8 @@
 						let contributions_api = await getContributions(land, start, end).catch(error => console.error(error))
 						// noinspection UnnecessaryLocalVariableJS
 						let contributions_data = await contributions_api?.json().catch(error => console.error(error))
+
+						val++
 
 						if (typeof p.data === 'undefined') {
 							$db.lands[i].data = {}
@@ -55,6 +58,8 @@
 								let contributions_api = await getContributions(land, start, end).catch(error => console.error(error))
 								// noinspection UnnecessaryLocalVariableJS
 								let contributions_data = await contributions_api?.json().catch(error => console.error(error))
+
+								val++
 
 								if (typeof p.data === 'undefined') {
 									$db.lands[i].data = {}
@@ -98,8 +103,14 @@
 	}
 
 	let id = 0
-	let data = $db?.lands[0]['data'][land]['contribution']
+	let val = 0
+	let max = lands.length
+	let data
 	let rows
+
+	afterUpdate(() => {
+		data = $db?.lands[0]?.data[land]?.contribution
+	})
 </script>
 
-<Land {id} {data} />
+<Land {id} {data} {val} {max} />

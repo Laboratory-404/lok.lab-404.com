@@ -1,7 +1,12 @@
 <script>
 	import { db } from '$lib/stores'
+	import { afterUpdate } from 'svelte'
 
 	let lands = Object.keys($db?.lands[0]?.data || {})
+
+	afterUpdate(() => {
+		lands = Object.keys($db?.lands[0]?.data || {})
+	})
 </script>
 
 <nav>
