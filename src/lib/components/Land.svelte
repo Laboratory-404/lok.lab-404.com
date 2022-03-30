@@ -1,21 +1,22 @@
 <!--suppress JSUnresolvedVariable, CssUnusedSymbol, ES6RedundantNestingInTemplateLiteral -->
 <script>
+	import { onMount } from 'svelte'
 	import Saos from 'saos'
 	import Box from '$lib/components/Box.svelte'
-	import { Datatable, SearchInput, PaginationButtons, PaginationRowCount } from 'svelte-simple-datatables'
+	import { DataTable, SearchInput, PaginationButtons, PaginationRowCount } from '$lib/components/DataTable/index'
 
 	export let id = 0
-	export let val = 5
-	export let max = 10
+	export let val = 0
+	export let max = 0
 	export let data
 
 	const settings = {
 		detached_search: false,
 		detached_pagination: false,
 		sortable: true,
-		pagination: true,
+		pagination: false,
 		scrollY: true,
-		rowsPerPage: 50,
+		// rowsPerPage: 50,
 		columnFilter: false,
 		css: true,
 		labels: {
@@ -34,6 +35,10 @@
 	}
 
 	let rows
+
+	onMount(() => {
+		console.log('onMountLand')
+	})
 </script>
 
 <svelte:head>
@@ -81,7 +86,7 @@
 		{/if}
 
 		{#if data}
-			<Datatable id="land-{id}" settings={settings} data={data} bind:dataRows={rows}>
+			<DataTable id="land-{id}" settings={settings} data={data} bind:dataRows={rows}>
 				<thead>
 				<th data-key="name" style="width: 100px;">Name</th>
 				<th data-key="continent" style="width: 100px;">Continent</th>
@@ -100,7 +105,7 @@
 					{/each}
 				{/if}
 				</tbody>
-			</Datatable>
+			</DataTable>
 		{:else}
 			<progress style="width: 100%;" value={val} max={max}></progress>
 			<svg style="display: block; position: absolute; top: 50%; left: 50%; margin: auto; transform: translate(-50%, -50%);" width="200px" height="200px" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
