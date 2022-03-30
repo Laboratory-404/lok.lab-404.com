@@ -120,8 +120,16 @@
 
 		$db.selected = id + ''
 
+		let index = 0
+
+		$db.lands.map((p, i) => {
+			if (p.start === start && p.end === end) {
+				index = i
+			}
+		})
+
 		// noinspection JSUnresolvedVariable
-		data = $db?.lands[0]?.data[id]?.contribution
+		data = $db?.lands[index]?.data[id]?.contribution
 	})
 </script>
 
