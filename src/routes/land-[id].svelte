@@ -17,6 +17,7 @@
 	export let params
 
 	$: id = params.id
+
 	let lands = [134223, 134224, 134225, 133969, 133968, 133967, 133711, 133712, 133713, 133455, 133456, 133457, 150949]
 	let val = 0
 	let max = lands.length
@@ -116,6 +117,8 @@
 				}
 			}
 		}
+
+		$db.selected = id + ''
 
 		// noinspection JSUnresolvedVariable
 		data = $db?.lands[0]?.data[id]?.contribution

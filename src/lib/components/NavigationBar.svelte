@@ -1,19 +1,31 @@
 <script>
-	import { db } from '$lib/stores'
 	import { afterUpdate } from 'svelte'
+	import { goto } from '$app/navigation'
+	import { db } from '$lib/stores'
 
-	let lands = Object.keys($db?.lands[0]?.data || {})
+	$: lands = Object.keys($db?.lands[0]?.data || {})
+
+	let selected = $db.selected + ''
+
+	const onChange = () => {
+		$db.selected = selected + ''
+		goto(`/land-${selected}`, { replaceState: true })
+	}
 
 	afterUpdate(() => {
-		lands = Object.keys($db?.lands[0]?.data || {})
+		selected = $db.selected + ''
 	})
 </script>
 
 <nav>
 	<ul>
-		<li><a href="/">Home</a></li>
-		{#each lands as land}
-			<li><a href="/land-{land}">{land}</a></li>
-		{/each}
+		<li>
+			<select bind:value={selected} on:change={onChange}>
+				<option selected disabled value="0">Select Land</option>
+				{#each lands as land}
+					<option value={land}>Land {land}</option>
+				{/each}
+			</select>
+		</li>
 	</ul>
 </nav>
