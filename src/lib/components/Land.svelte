@@ -34,12 +34,12 @@
 </script>
 
 <svelte:head>
-	{@html `<${''}style>
+{@html `<${''}style>
 	#land-${id} {
 		background-color: transparent;
 	}
 
-	#land-${id} section {
+	#land-${id} section.dt-search {
 		margin-left: 0;
 	}
 
@@ -59,6 +59,10 @@
 
 	#land-${id} section.dt-header thead th {
 		background-color: transparent;
+	}
+
+	#land-${id} section.dt-table {
+		overflow-x: auto;
 	}
 </${''}style>`}
 </svelte:head>
@@ -106,7 +110,6 @@
 		</aside>
 	{/if}
 </Box>
-
 
 <style global lang="scss">
 	.box {
