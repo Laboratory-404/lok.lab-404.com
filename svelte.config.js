@@ -2,7 +2,6 @@
 
 import preprocess from 'svelte-preprocess'
 import adapter_static from '@sveltejs/adapter-static'
-import svg from '@poppanator/sveltekit-svg'
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -21,9 +20,8 @@ const config = {
 		vite: {
 			build: {
 				chunkSizeWarningLimit: 2000,
-				sourcemap: process.env?.NODE_ENV !== 'production'
+				sourcemap: true
 			},
-			plugins: [svg()],
 			css: {
 				preprocessorOptions: {
 					scss: {
