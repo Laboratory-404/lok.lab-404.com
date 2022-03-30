@@ -81,12 +81,14 @@
 		background: var(--bg-color-primary) none;
 	}
 
+	//noinspection CssInvalidFunction
 	*::-webkit-scrollbar-thumb {
 		background: var(--primary-color);
 		background: transparent linear-gradient(0deg, var(--scrollbar-vertical-color));
 		border-radius: 3px;
 	}
 
+	//noinspection CssInvalidFunction
 	*::-webkit-scrollbar-thumb:horizontal {
 		background: var(--primary-color);
 		background: transparent linear-gradient(90deg, var(--scrollbar-horizontal-color));
