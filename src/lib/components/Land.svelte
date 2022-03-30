@@ -13,7 +13,7 @@
 
 	const settings = {
 		pagination: false,
-		columnFilter: false,
+		columnFilter: true,
 		blocks: {
 			searchInput: !detached_search,
 			paginationButtons: !detached_pagination,
@@ -51,8 +51,22 @@
 	}
 
 	#land-${id} section.dt-header thead th {
-		background-color: transparent;
-		border-bottom: none;
+		background: transparent;
+		border: none;
+	}
+
+	#land-${id} section.dt-header thead th.filter {
+		box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, rgba(0, 0, 0, 0.8) 0 1px 7px 0 inset;
+	}
+
+	#land-${id} section.dt-header thead th input {
+		background: transparent;
+		border: none;
+	}
+
+	#land-${id} section.dt-header thead th input:focus {
+		border: 1px solid var(--accent-color);
+		box-shadow: rgb(255, 255, 255) 0 0 0 0, rgba(255, 204, 0, 0.65) 0 0 0 1px, rgba(0, 0, 0, 0) 0 0 0 0;
 	}
 
 	#land-${id} article.dt-table {
