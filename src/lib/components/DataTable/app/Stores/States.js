@@ -29,7 +29,8 @@ export default class States {
 					store = parseInt(number)
 				}
 
-				document.querySelector(`#${id.get()} .dt-table`).scrollTop = 0
+				if (document.querySelector(`#${id.get()} .dt-table`))
+					document.querySelector(`#${id.get()} .dt-table`).scrollTop = 0
 
 				return store
 			})

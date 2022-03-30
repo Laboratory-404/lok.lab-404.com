@@ -13,7 +13,8 @@
 	}
 </script>
 
-<input class={classList} class:css={$options.css} type="text" placeholder={$options.labels.search} on:input={(e) => search(e.target.value)} {ref}/>
+<!--suppress XmlInvalidId -->
+<input class={classList} class:css={$options.css} type="text" autocomplete="new-password" placeholder={$options.labels.search} on:input={(e) => search(e.target.value)} {ref} value="" />
 
 <style>
 	input.css {

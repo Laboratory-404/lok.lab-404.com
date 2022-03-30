@@ -47,7 +47,7 @@
 		<link rel="preload" href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600&subset=all&display=swap" as="style" onload="this.onload=null; this.rel='stylesheet'" />
 		<noscript><link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600&subset=all&display=swap" rel="stylesheet" type="text/css" /></noscript>
 		<meta http-equiv="content-security-policy" content="">
-	<link rel="modulepreload" href="/_app/start-ea0dd12f.js">
+	<link rel="modulepreload" href="/_app/start-41299102.js">
 	<link rel="modulepreload" href="/_app/chunks/vendor-ad1cfbc0.js">
 				<script>
 		if ('serviceWorker' in navigator) {
@@ -86,7 +86,7 @@
 
 			.ui-loading path {
 				opacity: 1;
-				fill: var(--text-color);
+				fill: var(--accent-color);
 			}
 
 			/*noinspection CssUnusedSymbol*/
@@ -94,6 +94,10 @@
 				position: absolute;
 				left: calc(50% - 90px);
 				top: calc(50% - 90px);
+			}
+
+			.ui-loading-ripple circle {
+				stroke: var(--accent-color);
 			}
 
 			/*noinspection CssUnusedSymbol*/
@@ -207,7 +211,7 @@
 		</svg>
 		
 		<script type="module" data-hydrate="45h">
-		import { start } from "/_app/start-ea0dd12f.js";
+		import { start } from "/_app/start-41299102.js";
 		start({
 			target: document.querySelector('[data-hydrate="45h"]').parentNode,
 			paths: {"base":"","assets":""},
