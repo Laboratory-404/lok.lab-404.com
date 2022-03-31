@@ -9,7 +9,7 @@
 
 	let loading = false
 	let wallet = $db.wallet
-	let clear2 = $db.clear2
+	let clear3 = $db.clear3
 	let start = $db.start
 	let end = $db.end
 	let lands = $db.lands
@@ -25,12 +25,13 @@
 	let max = 0
 
 	onMount(async () => {
-		if (!clear2) {
+		if (!clear3) {
 			window.localStorage.removeItem('db')
 			// noinspection JSUndeclaredVariable
 			$db = {
 				clear: true,
 				clear2: true,
+				clear3: true,
 				wallet: '0xB00Fc62B8B22243779A35effb8B98f18193daa09',
 				contract: '0x6CC462bc49ceCFE943Bc4F477b23b92906e6074F',
 				lands: ['134223', '134224', '134225', '133969', '133968', '133967', '133711', '133712', '133713', '133455', '133456', '133457'],
