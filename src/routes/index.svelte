@@ -75,9 +75,9 @@
 		</svg>
 	{:else}
 		<div>
-			<label>Wallet <input class="wallet" bind:value={wallet} on:change={onInputChange} /></label><br /><br />
-			<label>Start <input type="date" bind:value={start} /></label><br /><br />
-			<label>End <input type="date" bind:value={end} /></label><br /><br />
+			<label>Wallet Address <input class="wallet" bind:value={wallet} on:change={onInputChange} /></label><br /><br />
+			<label>Start Date <input type="date" bind:value={start} /></label><br /><br />
+			<label>End Date <input type="date" bind:value={end} /></label><br /><br />
 		</div>
 
 		<div class="lands">
@@ -86,7 +86,7 @@
 					<button class="land" on:click={goto(`/land-${land}`, { replaceState: true })}>Land {land}</button>
 				{/each}
 			{:else}
-				No lands
+				<div class="center">No lands found</div>
 			{/if}
 		</div>
 	{/if}
