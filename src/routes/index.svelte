@@ -20,7 +20,7 @@
 	$: end = $db.end
 	$: lands = $db.lands
 
-	if ($db?.blacklisted && Array.isArray($db?.blacklisted)) {
+	if (lands && $db?.blacklisted && Array.isArray(lands) && Array.isArray($db?.blacklisted)) {
 		lands = lands.filter(l => !$db.blacklisted.includes(l))
 	}
 
