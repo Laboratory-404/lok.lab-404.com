@@ -12,9 +12,7 @@
 	let clear = $db.clear
 	let start = $db.start
 	let end = $db.end
-	let lands
-
-	$: lands = $db.lands
+	let lands = $db.lands
 
 	if (lands && $db?.blacklisted && Array.isArray(lands) && Array.isArray($db?.blacklisted)) {
 		lands = lands.filter(l => !$db.blacklisted.includes(l))
