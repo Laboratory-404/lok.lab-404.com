@@ -8,11 +8,17 @@
 	import Box from '$lib/components/Box.svelte'
 
 	let loading = false
-	let wallet = $db.wallet
-	let clear3 = $db.clear3
-	let start = $db.start
-	let end = $db.end
-	let lands = $db.lands
+	let wallet
+	let clear3
+	let start
+	let end
+	let lands
+
+	$: wallet = $db.wallet
+	$: clear3 = $db.clear3
+	$: start = $db.start
+	$: end = $db.end
+	$: lands = $db.lands
 
 	if ($db?.blacklisted && Array.isArray($db?.blacklisted)) {
 		lands = lands.filter(l => !$db.blacklisted.includes(l))
