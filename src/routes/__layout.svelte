@@ -29,6 +29,8 @@
 <!--suppress CssInvalidPseudoSelector -->
 <style global lang="scss">
 	:root {
+		color-scheme: dark;
+
 		--space-xxs: 0.25rem;
 		--space-xs: 0.5rem;
 		--space-sm: 1rem;
@@ -162,23 +164,32 @@
 		animation: fade-in 0.8s;
 	}
 
-	input {
+	[type='text'], [type='email'], [type='url'], [type='password'], [type='number'], [type='date'], [type='datetime-local'], [type='month'], [type='search'], [type='tel'], [type='time'], [type='week'], [multiple], textarea, select {
+		background-color: transparent;
 		border: 1px solid rgba(255, 204, 0, 0.65);
-		border-radius: 3px;
-		outline: none;
-		padding: 0 8px;
-		line-height: 24px;
-		margin: 0;
-		height: 24px;
-		background: transparent;
-		width: 176px;
-		transition: all, 0.1s;
 		color: var(--accent-color);
+		transition: all, 0.1s;
+		outline: none;
+		border-radius: 3px;
 	}
 
-	input:focus {
+	[type='text']:focus, [type='email']:focus, [type='url']:focus, [type='password']:focus, [type='number']:focus, [type='date']:focus, [type='datetime-local']:focus, [type='month']:focus, [type='search']:focus, [type='tel']:focus, [type='time']:focus, [type='week']:focus, [multiple]:focus, textarea:focus, select:focus {
 		border: 1px solid var(--accent-color);
 		box-shadow: rgb(255, 255, 255) 0 0 0 0, rgba(255, 204, 0, 0.65) 0 0 0 1px, rgba(0, 0, 0, 0) 0 0 0 0;
+	}
+
+	button, input, optgroup, select, textarea {
+		background-color: transparent;
+		border: 1px solid rgba(255, 204, 0, 0.65);
+		color: var(--accent-color);
+		transition: all, 0.1s;
+		outline: none;
+		border-radius: 3px;
+		/*padding: 0 8px;
+		line-height: 24px;
+		margin: 0;
+		width: 176px;
+		height: 24px;*/
 	}
 
 	input::placeholder {
@@ -277,6 +288,11 @@
 
 	progress[value]::-webkit-progress-value {
 		background-image: -webkit-linear-gradient(135deg, transparent, transparent 33%, rgba(0,0,0,.1) 33%, rgba(0,0,0,.1) 66%, transparent 66%), -webkit-linear-gradient(top, rgba(255, 255, 255, .25), rgba(0,0,0,.2)), -webkit-linear-gradient( left, #f44, #09c);
+	}
+
+	.box {
+		height: 80vh;
+		margin-top: 70px;
 	}
 
 	.fade-in {

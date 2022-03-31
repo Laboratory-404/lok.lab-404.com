@@ -4,6 +4,7 @@
 import { get as getCookie, set as setCookie, erase as removeCookie } from 'browser-cookies'
 import { get, set, createStore, del } from 'idb-keyval'
 
+// noinspection JSUnusedGlobalSymbols
 /**
  * Disabled warnings about missing/unavailable storages
  */
@@ -40,6 +41,7 @@ const warnStorageNotFound = storageName => {
 
 const allowedClasses = []
 
+// noinspection JSUnusedGlobalSymbols
 /**
  * Add a class to the allowed list of classes to be serialized
  */
@@ -152,6 +154,7 @@ function getBrowserStorage(browserStorage, listenExternalChanges = false) {
 	}
 }
 
+// noinspection JSUnusedGlobalSymbols
 /**
  * Storage implementation that use the browser local storage
  */
@@ -165,6 +168,7 @@ export function localStorage(listenExternalChanges = false) {
 	return noopStorage()
 }
 
+// noinspection JSUnusedGlobalSymbols
 /**
  * Storage implementation that use the browser session storage
  */
@@ -178,6 +182,7 @@ export function sessionStorage(listenExternalChanges = false) {
 	return noopStorage()
 }
 
+// noinspection JSUnusedGlobalSymbols
 /**
  * Storage implementation that use the browser cookies
  */
@@ -203,6 +208,7 @@ export function cookieStorage() {
 	}
 }
 
+// noinspection JSUnusedGlobalSymbols
 /**
  * Storage implementation that use the browser IndexedDB
  */

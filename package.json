@@ -38,9 +38,7 @@
 		"@tailwindcss/typography": "^0.5.2",
 		"browser-cookies": "^1.2.0",
 		"cookie": "^0.4.2",
-		"dexie": "^3.2.1",
 		"idb-keyval": "^6.1.0",
-		"saos": "^1.2.0",
 		"svelte-feather-icons": "^3.5.1",
 		"svelte-simple-datatables": "^0.2.3",
 		"tailwindcss": "^3.0.23"

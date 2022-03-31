@@ -64,8 +64,8 @@ export default class Columns {
 
 						Array.from(tbody.children).forEach(td => {
 							let th = tr.children[i]
-							let thW = th.getBoundingClientRect()?.width
-							let tdW = td.getBoundingClientRect()?.width
+							let thW = th?.getBoundingClientRect()?.width
+							let tdW = td?.getBoundingClientRect()?.width
 
 							if (tdW > thW) {
 								th.style.minWidth = tdW + 'px'
@@ -102,8 +102,8 @@ export default class Columns {
 						let i = 0
 						Array.from(tbody.children).forEach(td => {
 							let th = tr.children[i]
-							let thW = th.getBoundingClientRect()?.width
-							let tdW = td.getBoundingClientRect()?.width
+							let thW = th?.getBoundingClientRect()?.width
+							let tdW = td?.getBoundingClientRect()?.width
 
 							if (tdW > thW) {
 								th.style.minWidth = tdW + 'px'
