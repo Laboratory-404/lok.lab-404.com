@@ -1,7 +1,7 @@
 <!--suppress JSUnresolvedVariable, CssUnusedSymbol, ES6RedundantNestingInTemplateLiteral -->
 <script>
 	import Box from '$lib/components/Box.svelte'
-	import { DataTable, SearchInput, PaginationButtons, PaginationRowCount } from '$lib/components/DataTable/index'
+	import { DataTable } from '$lib/components/DataTable/index'
 
 	export let id = 0
 	export let val = 0

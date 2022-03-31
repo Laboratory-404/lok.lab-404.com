@@ -10,6 +10,7 @@
 	let loading = false
 	let wallet = $db.wallet
 	let clear = $db.clear
+	let week
 	let start = $db.start
 	let end = $db.end
 	let lands = $db.lands
@@ -19,10 +20,6 @@
 	}
 
 	$db.selected = '0'
-
-	let id = 0
-	let val = 0
-	let max = 0
 
 	onMount(async () => {
 		if (!clear) {
@@ -44,9 +41,26 @@
 		await reload()
 	})
 
-	const reload = async () => {
-		console.log('reload')
+	const parseDates = range => {
+		let year = parseInt(range.slice(0, 4), 10)
+		let week = parseInt(range.slice(6), 10)
 
+		let day = (1 + (week - 1) * 7)
+
+		let dayOffset = new Date(year, 0, 1).getDay()
+
+		dayOffset--
+
+		let days = []
+
+		for (let i = 0; i < 7; i++) {
+			days.push(new Date(year, 0, day - dayOffset + i).toISOString().split('T')[0])
+		}
+
+		return days
+	}
+
+	const reload = async () => {
 		loading = true
 		lands = await getLands()
 		loading = false
@@ -56,10 +70,14 @@
 		getData(lands, start, end)
 	}
 
-	const onInputChange = async () => {
-		console.log('change')
+	const onChange = async () => {
+		let dates = parseDates(week)
 
 		$db.wallet = wallet
+		$db.start = dates[0]
+		$db.end = dates[dates.length - 1]
+		start = $db.start
+		end = $db.end
 		$db.data = []
 		$db.lands = []
 
@@ -69,14 +87,13 @@
 
 <Box style="height: 80vh;">
 	<div>
-		<label>Wallet Address <input class="wallet" bind:value={wallet} on:change={onInputChange} /></label><br /><br />
-		<label>Start Date <input type="date" bind:value={start} /></label><br /><br />
-		<label>End Date <input type="date" bind:value={end} /></label><br /><br />
+		<label>Wallet Address <input class="wallet" bind:value={wallet} on:change={onChange} /></label><br /><br />
+		<label>Start Date <input type="date" bind:value={start} disabled /></label> <label>End Date <input type="date" bind:value={end} disabled /></label><br /><br />
+		<label>Week <input type="week" bind:value={week} on:change={onChange} /></label>
 	</div>
 
 	<div class="lands">
 		{#if loading}
-			<!--<progress class="progress" value={val} max={max}></progress>-->
 			<svg class="center" width="200px" height="200px" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
 				<g transform="translate(50 50)">
 					<g transform="translate(-19 -19) scale(0.6)">
@@ -125,7 +142,7 @@
 			position: absolute;
 			bottom: 20px;
 			width: calc(100% - 40px);
-			height: calc(100% - 222px);
+			height: calc(100% - 290px);
 			overflow-y: auto;
 
 			.land {
@@ -138,7 +155,7 @@
 		}
 
 		.wallet {
-			width: 400px;
+			width: 410px;
 		}
 	}
 </style>
