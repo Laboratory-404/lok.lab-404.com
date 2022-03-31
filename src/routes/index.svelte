@@ -10,7 +10,7 @@
 	let loading = false
 	let wallet = $db.wallet
 	let clear = $db.clear
-	let week
+	let week = $db.week
 	let start = $db.start
 	let end = $db.end
 	let lands = $db.lands
@@ -50,6 +50,7 @@
 		let dayOffset = new Date(year, 0, 1).getDay()
 
 		dayOffset--
+		dayOffset--
 
 		let days = []
 
@@ -74,6 +75,7 @@
 		let dates = parseDates(week)
 
 		$db.wallet = wallet
+		$db.week = week
 		$db.start = dates[0]
 		$db.end = dates[dates.length - 1]
 		start = $db.start
@@ -88,8 +90,8 @@
 <Box style="height: 80vh;">
 	<div>
 		<label>Wallet Address <input class="wallet" bind:value={wallet} on:change={onChange} /></label><br /><br />
-		<label>Start Date <input type="date" bind:value={start} disabled /></label> <label>End Date <input type="date" bind:value={end} disabled /></label><br /><br />
-		<label>Week <input type="week" bind:value={week} on:change={onChange} /></label>
+		<label>Week <input type="week" bind:value={week} on:change={onChange} /></label><br /><br />
+		Start Date {start}<br />End Date {end}
 	</div>
 
 	<div class="lands">
@@ -142,7 +144,7 @@
 			position: absolute;
 			bottom: 20px;
 			width: calc(100% - 40px);
-			height: calc(100% - 290px);
+			height: calc(100% - 240px);
 			overflow-y: auto;
 
 			.land {
@@ -155,7 +157,9 @@
 		}
 
 		.wallet {
-			width: 410px;
+			width: 430px;
+			height: 42px;
+			padding: 10px;
 		}
 	}
 </style>

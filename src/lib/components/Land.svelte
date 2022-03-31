@@ -155,7 +155,7 @@
 						<tr>
 							<td>{row.name}</td>
 							<td>{row.continent}</td>
-							<td>{row.total}</td>
+							<td>{Math.round((row.total + Number.EPSILON) * 100) / 100}</td>
 						</tr>
 					{/each}
 				{/if}

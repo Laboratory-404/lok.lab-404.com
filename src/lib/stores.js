@@ -10,6 +10,7 @@ export const db = persist(writable({
 	blacklisted: ['150949'],
 	start: '2022-03-21',
 	end: '2022-03-27',
+	week: '2022-W13',
 	data: [],
 	selected: '0'
 }), localStorage(), 'db')
