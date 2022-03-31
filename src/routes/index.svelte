@@ -8,16 +8,12 @@
 	import Box from '$lib/components/Box.svelte'
 
 	let loading = false
-	let wallet
-	let clear3
-	let start
-	let end
+	let wallet = $db.wallet
+	let clear = $db.clear
+	let start = $db.start
+	let end = $db.end
 	let lands
 
-	$: wallet = $db.wallet
-	$: clear3 = $db.clear3
-	$: start = $db.start
-	$: end = $db.end
 	$: lands = $db.lands
 
 	if (lands && $db?.blacklisted && Array.isArray(lands) && Array.isArray($db?.blacklisted)) {
@@ -31,13 +27,11 @@
 	let max = 0
 
 	onMount(async () => {
-		if (!clear3) {
+		if (!clear) {
 			window.localStorage.removeItem('db')
 			// noinspection JSUndeclaredVariable
 			$db = {
 				clear: true,
-				clear2: true,
-				clear3: true,
 				wallet: '0xB00Fc62B8B22243779A35effb8B98f18193daa09',
 				contract: '0x6CC462bc49ceCFE943Bc4F477b23b92906e6074F',
 				lands: ['134223', '134224', '134225', '133969', '133968', '133967', '133711', '133712', '133713', '133455', '133456', '133457'],
