@@ -1,6 +1,6 @@
 {
   ".svelte-kit/runtime/client/start.js": {
-    "file": "start-b087a3c9.js",
+    "file": "start-aff3d80b.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
@@ -37,7 +37,7 @@
     ]
   },
   "src/routes/index.svelte": {
-    "file": "pages/index.svelte-9c84091a.js",
+    "file": "pages/index.svelte-3ffc9691.js",
     "src": "src/routes/index.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -45,21 +45,21 @@
       "_vendor-321789e9.js",
       "_singletons-d1fb5791.js",
       "_stores-b0039799.js",
-      "_Box-3a799e7e.js"
+      "_Box-c9b05369.js"
     ],
     "css": [
       "assets/pages/index.svelte-bcd39e58.css"
     ]
   },
   "src/routes/land-[id].svelte": {
-    "file": "pages/land-_id_.svelte-d90f9864.js",
+    "file": "pages/land-_id_.svelte-d170d268.js",
     "src": "src/routes/land-[id].svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-321789e9.js",
       "_stores-b0039799.js",
-      "_Box-3a799e7e.js"
+      "_Box-c9b05369.js"
     ],
     "css": [
       "assets/pages/land-_id_.svelte-08def171.css"
@@ -77,8 +77,8 @@
       "_vendor-321789e9.js"
     ]
   },
-  "_Box-3a799e7e.js": {
-    "file": "chunks/Box-3a799e7e.js",
+  "_Box-c9b05369.js": {
+    "file": "chunks/Box-c9b05369.js",
     "imports": [
       "_vendor-321789e9.js",
       "_stores-b0039799.js"
