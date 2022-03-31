@@ -1,9 +1,9 @@
 const build = [
-  "/_app/start-7f296268.js",
+  "/_app/start-c1cb2d4c.js",
   "/_app/pages/__layout.svelte-92a5e281.js",
   "/_app/assets/pages/__layout.svelte-de3876c9.css",
   "/_app/pages/__error.svelte-75288140.js",
-  "/_app/pages/index.svelte-14cff7b5.js",
+  "/_app/pages/index.svelte-d6b1306d.js",
   "/_app/assets/pages/index.svelte-bcd39e58.css",
   "/_app/pages/land-_id_.svelte-d90f9864.js",
   "/_app/assets/pages/land-_id_.svelte-08def171.css",
@@ -21,7 +21,7 @@ const files = [
   "/manifest.webmanifest",
   "/robots.txt"
 ];
-const version = "1648688566203";
+const version = "1648688773450";
 const ASSETS = `cache${version}`;
 const to_cache = build.concat(files);
 const staticAssets = new Set(to_cache);

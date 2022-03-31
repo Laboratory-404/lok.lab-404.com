@@ -12,7 +12,11 @@
 	let clear = $db.clear
 	let start = $db.start
 	let end = $db.end
-	let lands = $db.lands.filter(l => !$db.blacklisted.includes(l))
+	let lands = $db.lands
+
+	if ($db?.blacklisted && Array.isArray($db?.blacklisted)) {
+		lands = lands.filter(l => !$db.blacklisted.includes(l))
+	}
 
 	$db.selected = '0'
 
